@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject shop;
     [SerializeField] private GameObject scores;
+    [SerializeField] private GameObject gameOver;
     [SerializeField] private Text score;
     [SerializeField] private Text highScore;
     [SerializeField] private GameObject healt;
@@ -46,17 +47,30 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ExitGame()
+    public void ExitAndRestartGame(bool isRestart)
     {
         Time.timeScale = 1;
-        isPlayable = false;
         playerAnimator.enabled = true;
-        mainMenu.SetActive(true);
-        game.SetActive(false);
-        scores.SetActive(false);
-        healt.SetActive(false);
-        pause.SetActive(false);
+        if (isRestart)
+        {
+            isPlayable = true;
+            playerAnimator.SetTrigger("moveDown");
+        }
+        else
+        {
+            isPlayable = false;
+            mainMenu.SetActive(true);
+            game.SetActive(false);
+            scores.SetActive(false);
+            healt.SetActive(false);
+            pause.SetActive(false);
+        }
+        gameOver.SetActive(false);
         foreach (var item in GameObject.FindGameObjectsWithTag(Tags.enemies))
+        {
+            Destroy(item);
+        }
+        foreach (var item in GameObject.FindGameObjectsWithTag(Tags.playerAttack))
         {
             Destroy(item);
         }
@@ -66,10 +80,9 @@ public class UIManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (player.GetComponent<Character>().Healt <= 0)
-        {
-            ExitGame();
-        }
+        Time.timeScale = 0;
+        gameOver.SetActive(true);
+        isPlayable = false;
     }
 
     public void HealtUpdate(string text)
@@ -77,11 +90,10 @@ public class UIManager : MonoBehaviour
         healt.GetComponentsInChildren<Text>()[1].text = text;
     }
 
-
     public void ScoresUpdate(string text)
     {
         score.text = text;
-        if (int.Parse(text) >= int.Parse(score.text))
+        if (int.Parse(text) >= int.Parse(highScore.text))
         {
             highScore.text = text;
         }

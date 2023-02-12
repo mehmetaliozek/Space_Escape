@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
             if (countDown < 0)
             {
                 SpawnEnemies(Random.Range(0, sprites.Length));
-                countDown = 5.0f;
+                countDown = 2.0f;
             }
         }
     }
