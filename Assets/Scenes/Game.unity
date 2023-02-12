@@ -241,7 +241,7 @@ MonoBehaviour:
   pause: {fileID: 594976821}
   shop: {fileID: 1151810860}
   scores: {fileID: 342762928}
-  healt: {fileID: 1732636340}
+  healt: {fileID: 1397891861}
   player: {fileID: 455502463}
 --- !u!1 &319405143
 GameObject:
@@ -1706,7 +1706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1397891862
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1721,8 +1721,8 @@ RectTransform:
   m_Children:
   - {fileID: 1670691099}
   - {fileID: 1732636341}
-  m_Father: {fileID: 1733862667}
-  m_RootOrder: 1
+  m_Father: {fileID: 1680602534}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2062,6 +2062,7 @@ RectTransform:
   - {fileID: 1733862667}
   - {fileID: 594976822}
   - {fileID: 1161856247}
+  - {fileID: 1397891862}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2384,7 +2385,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1078624195}
-  - {fileID: 1397891862}
   m_Father: {fileID: 1680602534}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2764,7 +2764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: healt
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: moveSpeed

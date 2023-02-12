@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
         {
             case Tags.enemies:
                 character.Healt -= other.GetComponent<Character>().AttackDamage;
+                uıManager.HealtUpdate(character.Healt.ToString());
                 if (character.Healt <= 0)
                 {
                     uıManager.GameOver();

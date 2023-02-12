@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     {
         pauseAndResumeButton = game.transform.GetChild(0).gameObject;
         playerAnimator = player.GetComponent<Animator>();
-        healt.GetComponent<Text>().text = player.GetComponent<Character>().Healt.ToString();
+        HealtUpdate(player.GetComponent<Character>().Healt.ToString());
     }
 
     public void StartGame()
@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
         mainMenu.SetActive(false);
         game.SetActive(true);
         scores.SetActive(true);
+        healt.SetActive(true);
         playerAnimator.SetTrigger("moveDown");
     }
 
@@ -51,6 +52,7 @@ public class UIManager : MonoBehaviour
         mainMenu.SetActive(true);
         game.SetActive(false);
         scores.SetActive(false);
+        healt.SetActive(false);
         pause.SetActive(false);
         foreach (var item in GameObject.FindGameObjectsWithTag(Tags.enemies))
         {
@@ -65,5 +67,10 @@ public class UIManager : MonoBehaviour
         {
             ExitGame();
         }
+    }
+
+    public void HealtUpdate(string text)
+    {
+        healt.GetComponentsInChildren<Text>()[1].text = text;
     }
 }
