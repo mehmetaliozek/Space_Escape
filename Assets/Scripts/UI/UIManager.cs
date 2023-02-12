@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject shop;
     [SerializeField] private GameObject scores;
+    [SerializeField] private Text score;
+    [SerializeField] private Text highScore;
     [SerializeField] private GameObject healt;
     [SerializeField] private GameObject player;
 
@@ -59,6 +61,7 @@ public class UIManager : MonoBehaviour
             Destroy(item);
         }
         player.GetComponent<Player>().PlayerReset();
+        score.text = "0";
     }
 
     public void GameOver()
@@ -72,5 +75,15 @@ public class UIManager : MonoBehaviour
     public void HealtUpdate(string text)
     {
         healt.GetComponentsInChildren<Text>()[1].text = text;
+    }
+
+
+    public void ScoresUpdate(string text)
+    {
+        score.text = text;
+        if (int.Parse(text) >= int.Parse(score.text))
+        {
+            highScore.text = text;
+        }
     }
 }

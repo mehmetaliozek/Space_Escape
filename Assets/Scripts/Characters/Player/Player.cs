@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
         {
             MovePlayer(character.MoveSpeed);
         }
+
+        Debug.Log(character.Score);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -74,5 +76,23 @@ public class Player : MonoBehaviour
     public void PlayerReset()
     {
         character.Healt = characterClone.Healt;
+        character.AttackDamage = characterClone.AttackDamage;
+        character.AttackSpeed = characterClone.AttackSpeed;
+        character.MoveSpeed = characterClone.MoveSpeed;
+        character.Score = characterClone.Score;
+        characterClone.HighScore = character.HighScore;
+        characterClone.Gold = character.Gold;
+    }
+
+    public void PlayerScoresUpdate()
+    {
+        character.Score += 1;
+
+        if (character.Score >= character.HighScore)
+        {
+            character.HighScore = character.Score;
+        }
+        
+        uıManager.ScoresUpdate(character.Score.ToString());
     }
 }

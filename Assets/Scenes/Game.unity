@@ -241,6 +241,8 @@ MonoBehaviour:
   pause: {fileID: 594976821}
   shop: {fileID: 1151810860}
   scores: {fileID: 342762928}
+  score: {fileID: 1828352431}
+  highScore: {fileID: 1812733955}
   healt: {fileID: 1397891861}
   player: {fileID: 455502463}
 --- !u!1 &319405143
@@ -2765,6 +2767,10 @@ PrefabInstance:
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: healt
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
+      propertyPath: score
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: moveSpeed
