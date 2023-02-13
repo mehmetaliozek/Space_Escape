@@ -6,6 +6,15 @@ public class Boost : MonoBehaviour
     {
         gameObject.tag = setTag(gameObject.GetComponent<SpriteRenderer>().sprite.name.Split("_")[1]);
     }
+
+    private void Update()
+    {
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private string setTag(string spriteName)
     {
         string tag = "";

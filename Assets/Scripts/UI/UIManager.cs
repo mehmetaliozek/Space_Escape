@@ -67,14 +67,14 @@ public class UIManager : MonoBehaviour
             pause.SetActive(false);
         }
         gameOver.SetActive(false);
-        foreach (var item in GameObject.FindGameObjectsWithTag(Tags.enemies))
+        foreach (var tag in Tags.getTags())
         {
-            Destroy(item);
+            foreach (var item in GameObject.FindGameObjectsWithTag(tag))
+            {
+                Destroy(item);
+            }
         }
-        foreach (var item in GameObject.FindGameObjectsWithTag(Tags.playerAttack))
-        {
-            Destroy(item);
-        }
+
         player.GetComponent<Player>().PlayerReset();
         score.text = "0";
     }
