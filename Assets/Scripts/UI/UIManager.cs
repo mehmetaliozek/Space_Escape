@@ -115,4 +115,9 @@ public class UIManager : MonoBehaviour
     public void AudioChange(GameObject Slider){
         Ses.GetComponent<AudioSource>().volume=Slider.GetComponent<Slider>().value;
     }
+
+    public void TabChange(GameObject[] tab){
+        tab[0].SetActive(false);
+        tab[1].SetActive(true);
+    }
 }
