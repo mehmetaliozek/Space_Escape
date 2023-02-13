@@ -28,8 +28,6 @@ public class Player : MonoBehaviour
         {
             MovePlayer(character.MoveSpeed);
         }
-
-        Debug.Log(character.Score);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -87,7 +87,7 @@ public class UIManager : MonoBehaviour
 
     public void HealtUpdate(string text)
     {
-        healt.GetComponentsInChildren<Text>()[1].text = text;
+        healt.GetComponentsInChildren<Text>()[0].text = text;
     }
 
     public void ScoresUpdate(string text)
