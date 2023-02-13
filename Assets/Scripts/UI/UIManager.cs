@@ -17,7 +17,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gold;
     [SerializeField] private GameObject healt;
     [SerializeField] private GameObject player;
-   
+    [SerializeField] private GameObject spaceShips;
+    [SerializeField] private GameObject galaxies;
+
     [SerializeField] private GameObject Ses;
 
     private GameObject pauseAndResumeButton;
@@ -108,16 +110,33 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void OpenAndCloseSettings(bool value){
+    public void OpenAndCloseSettings(bool value)
+    {
         settings.SetActive(value);
-        
-    }
-    public void AudioChange(GameObject Slider){
-        Ses.GetComponent<AudioSource>().volume=Slider.GetComponent<Slider>().value;
     }
 
-    public void TabChange(GameObject[] tab){
-        tab[0].SetActive(false);
-        tab[1].SetActive(true);
+    public void OpenAndCloseShop(bool value)
+    {
+        shop.SetActive(value);
+        mainMenu.SetActive(!value);
+    }
+
+    public void AudioChange(GameObject Slider)
+    {
+        Ses.GetComponent<AudioSource>().volume = Slider.GetComponent<Slider>().value;
+    }
+
+    public void TabChange(bool isSpaceShip)
+    {
+        if (isSpaceShip)
+        {
+            spaceShips.SetActive(false);
+            galaxies.SetActive(true);
+        }
+        else
+        {
+            spaceShips.SetActive(true);
+            galaxies.SetActive(false);
+        }
     }
 }
