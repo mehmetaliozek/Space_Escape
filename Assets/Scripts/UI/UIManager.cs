@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject game;
     [SerializeField] private GameObject pause;
+    [SerializeField] private GameObject settings;
     [SerializeField] private GameObject shop;
     [SerializeField] private GameObject scores;
     [SerializeField] private GameObject gameOver;
@@ -16,6 +17,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gold;
     [SerializeField] private GameObject healt;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject sliderMusic;
+    [SerializeField] private GameObject sliderSFX;
 
     private GameObject pauseAndResumeButton;
     private Animator playerAnimator;
@@ -103,5 +106,9 @@ public class UIManager : MonoBehaviour
         {
             highScore.text = text;
         }
+    }
+
+    public void OpenAndCloseSettings(bool value){
+        settings.SetActive(value);
     }
 }
