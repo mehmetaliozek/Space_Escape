@@ -244,6 +244,7 @@ MonoBehaviour:
   gameOver: {fileID: 870267832}
   score: {fileID: 1828352431}
   highScore: {fileID: 1812733955}
+  gold: {fileID: 1161856246}
   healt: {fileID: 635368918}
   player: {fileID: 455502463}
 --- !u!1 &319405143
@@ -2052,8 +2053,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: {fileID: 3165295810023929870, guid: 8ca374b8b17ae58419ef6f15c94b82a3, type: 3}
-  sprites:
+  enemiesSprites:
   - {fileID: 21300000, guid: db6d554349a031941bba4ca288114d6a, type: 3}
+  boost: {fileID: 5464798643908778257, guid: 9e6b765b34a65404ca3b4bdb00ab3daf, type: 3}
+  boostSprites:
+  - {fileID: -1759062820, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
+  - {fileID: -1876841443, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
+  - {fileID: 1877532713, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
+  - {fileID: 974863365, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
+  - {fileID: -309278599, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
 --- !u!61 &1315087877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2467,7 +2475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1702502143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2668,7 +2676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1733862667
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3363,7 +3371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: moveSpeed
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: attackSpeed
@@ -3371,7 +3379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: attackDamage
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5145857375827698984, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: cam

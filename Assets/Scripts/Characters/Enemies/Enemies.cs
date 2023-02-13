@@ -28,11 +28,7 @@ public class Enemies : MonoBehaviour
     {
         if (isDestroyable)
         {
-            if (other.tag == Tags.player)
-            {
-                character.Healt -= other.GetComponent<Character>().AttackDamage;
-            }
-            else if (other.tag == Tags.playerAttack)
+            if (other.tag == Tags.playerAttack)
             {
                 character.Healt -= other.GetComponent<LaserBeam>().AttackDamage;
             }

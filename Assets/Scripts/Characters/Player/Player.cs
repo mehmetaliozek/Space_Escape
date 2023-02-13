@@ -43,14 +43,26 @@ public class Player : MonoBehaviour
                 }
                 break;
             case Tags.attackBoost:
-                character.AttackDamage += 0;
+                character.AttackDamage = 6;
                 break;
             case Tags.attackSpeedBoost:
-                character.AttackSpeed += 0;
+                character.AttackSpeed = 0.5f;
                 break;
             case Tags.moveSpeedBoost:
-                character.MoveSpeed += 0;
+                character.MoveSpeed = 1;
                 break;
+            case Tags.gold:
+                character.Gold += 1;
+                uıManager.GoldUpdate(character.Gold.ToString());
+                break;
+            case Tags.healt:
+                character.Healt += 1;
+                uıManager.HealtUpdate(character.Healt.ToString());
+                break;
+        }
+        if (other.tag != Tags.playerAttack)
+        {
+            Destroy(other.gameObject);
         }
     }
 
@@ -71,6 +83,18 @@ public class Player : MonoBehaviour
         GetComponent<Animator>().enabled = false;
     }
 
+    public void PlayerScoresUpdate()
+    {
+        character.Score += 1;
+
+        if (character.Score >= character.HighScore)
+        {
+            character.HighScore = character.Score;
+        }
+
+        uıManager.ScoresUpdate(character.Score.ToString());
+    }
+
     public void PlayerReset()
     {
         character.Healt = characterClone.Healt;
@@ -80,17 +104,7 @@ public class Player : MonoBehaviour
         character.Score = characterClone.Score;
         characterClone.HighScore = character.HighScore;
         characterClone.Gold = character.Gold;
-    }
 
-    public void PlayerScoresUpdate()
-    {
-        character.Score += 1;
-
-        if (character.Score >= character.HighScore)
-        {
-            character.HighScore = character.Score;
-        }
-        
-        uıManager.ScoresUpdate(character.Score.ToString());
+        uıManager.HealtUpdate(character.Healt.ToString());
     }
 }

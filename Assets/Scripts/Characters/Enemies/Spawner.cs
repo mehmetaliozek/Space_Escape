@@ -6,7 +6,13 @@ public class Spawner : MonoBehaviour
     private GameObject enemies;
 
     [SerializeField]
-    private Sprite[] sprites;
+    private Sprite[] enemiesSprites;
+
+    [SerializeField]
+    private GameObject boost;
+
+    [SerializeField]
+    private Sprite[] boostSprites;
 
     private float countDown;
 
@@ -27,7 +33,14 @@ public class Spawner : MonoBehaviour
             countDown -= Time.deltaTime;
             if (countDown < 0)
             {
-                SpawnEnemies(Random.Range(0, sprites.Length));
+                if (Random.Range(0, 100) < 90)
+                {
+                    SpawnEnemies(Random.Range(0, enemiesSprites.Length));
+                }
+                else
+                {
+                    SpawnBoost(Random.Range(0, boostSprites.Length));
+                }
                 countDown = 2.0f;
             }
         }
@@ -52,10 +65,17 @@ public class Spawner : MonoBehaviour
     private void SpawnEnemies(int randomIndex)
     {
         Character character = enemies.GetComponent<Character>();
-        enemies.GetComponent<SpriteRenderer>().sprite = sprites[randomIndex];
+        enemies.GetComponent<SpriteRenderer>().sprite = enemiesSprites[randomIndex];
         enemies.GetComponent<Rigidbody2D>().gravityScale = character.MoveSpeed;
         RandomPosition(Random.Range(-range, range));
         Instantiate(enemies, new Vector3(x, y, 0.0f), Quaternion.Euler(180.0f, 0.0f, 0.0f));
+    }
+
+    private void SpawnBoost(int randomIndex)
+    {
+        boost.GetComponent<SpriteRenderer>().sprite = boostSprites[randomIndex];
+        RandomPosition(Random.Range(-range, range));
+        Instantiate(boost, new Vector3(x, y, 0.0f), Quaternion.identity);
     }
 
     private void RandomPosition(float randomNumber)

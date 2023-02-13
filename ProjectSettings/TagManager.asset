@@ -6,6 +6,11 @@ TagManager:
   tags:
   - PlayerAttack
   - Enemies
+  - AttackBoost
+  - AttackSpeedBoost
+  - MoveSpeedBoost
+  - Gold
+  - Healt
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOver;
     [SerializeField] private Text score;
     [SerializeField] private Text highScore;
+    [SerializeField] private GameObject gold;
     [SerializeField] private GameObject healt;
     [SerializeField] private GameObject player;
 
@@ -83,6 +84,11 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         gameOver.SetActive(true);
         isPlayable = false;
+    }
+
+    public void GoldUpdate(string text)
+    {
+        gold.GetComponentsInChildren<Text>()[0].text = text;
     }
 
     public void HealtUpdate(string text)
