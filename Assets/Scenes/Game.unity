@@ -690,9 +690,7 @@ MonoBehaviour:
   gold: {fileID: 1161856246}
   healt: {fileID: 635368918}
   player: {fileID: 455502463}
-  sliderMusic: {fileID: 1040275225}
-  sliderSFX: {fileID: 999579223}
-  Ses: {fileID: 0}
+  Ses: {fileID: 1174150047}
 --- !u!1 &319405143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,10 +2033,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265940702}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: AudioChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1040275225}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1055819614
 GameObject:
   m_ObjectHideFlags: 0
