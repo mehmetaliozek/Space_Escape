@@ -692,6 +692,7 @@ MonoBehaviour:
   player: {fileID: 455502463}
   sliderMusic: {fileID: 1040275225}
   sliderSFX: {fileID: 999579223}
+  Ses: {fileID: 0}
 --- !u!1 &319405143
 GameObject:
   m_ObjectHideFlags: 0

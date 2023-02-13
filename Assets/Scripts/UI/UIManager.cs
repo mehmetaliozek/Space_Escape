@@ -17,8 +17,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gold;
     [SerializeField] private GameObject healt;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject sliderMusic;
-    [SerializeField] private GameObject sliderSFX;
+   
+    [SerializeField] private GameObject Ses;
 
     private GameObject pauseAndResumeButton;
     private Animator playerAnimator;
@@ -110,5 +110,9 @@ public class UIManager : MonoBehaviour
 
     public void OpenAndCloseSettings(bool value){
         settings.SetActive(value);
+        
+    }
+    public void AudioChange(GameObject Slider){
+        Ses.GetComponent<AudioSource>().volume=Slider.GetComponent<Slider>().value;
     }
 }
