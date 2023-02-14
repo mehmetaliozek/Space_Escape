@@ -9,6 +9,9 @@ public class PlayerAttack : MonoBehaviour
     private GameObject laserBeam;
 
     private Character character;
+    // Mermi Çıkış Sesi için
+    public GameObject AudioSFX;
+    public AudioClip Audio;
 
     private float countDown;
 
@@ -25,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
             countDown -= Time.fixedDeltaTime;
             if (countDown < 0)
             {
+                AudioSFX.GetComponent<AudioSource>().PlayOneShot(Audio);
                 laserBeam.GetComponent<Rigidbody2D>().gravityScale = -5.0f;
                 laserBeam.GetComponent<LaserBeam>().AttackDamage = character.AttackDamage;
                 Instantiate(laserBeam, transform.position, Quaternion.identity);

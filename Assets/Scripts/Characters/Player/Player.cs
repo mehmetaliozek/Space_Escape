@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     private Character character;
     private Character characterClone;
     private UIManager uıManager;
+    //Çarpışma Sesi İçin
+    public GameObject AudioSFX;
+    public AudioClip Audio;
 
     private void Awake()
     {
@@ -34,7 +37,10 @@ public class Player : MonoBehaviour
     {
         switch (other.tag)
         {
+
             case Tags.enemies:
+                
+                AudioSFX.GetComponent<AudioSource>().PlayOneShot(Audio);
                 character.Healt -= other.GetComponent<Character>().AttackDamage;
                 uıManager.HealtUpdate(character.Healt.ToString());
                 if (character.Healt <= 0)

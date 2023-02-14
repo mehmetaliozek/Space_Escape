@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject galaxies;
 
     [SerializeField] private GameObject Ses;
+    [SerializeField] private GameObject SesFx;
+
+    [SerializeField] private GameObject SesFx2;
 
     private GameObject pauseAndResumeButton;
     private Animator playerAnimator;
@@ -125,7 +128,16 @@ public class UIManager : MonoBehaviour
     {
         Ses.GetComponent<AudioSource>().volume = Slider.GetComponent<Slider>().value;
     }
-
+    
+    public void AudioChangeSFX(GameObject Slider2)
+    {
+        SesFx.GetComponent<AudioSource>().volume = Slider2.GetComponent<Slider>().value;
+        //Mermi Sesi Çarpışma sesinin üstüne binmemesi için daha az değer alıyor
+        SesFx2.GetComponent<AudioSource>().volume=Slider2.GetComponent<Slider>().value/4;
+        
+        
+        
+    }
     public void TabChange(bool isSpaceShip)
     {
         if (isSpaceShip)
