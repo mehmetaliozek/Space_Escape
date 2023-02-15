@@ -31,6 +31,7 @@ public class Enemies : MonoBehaviour
             if (other.tag == Tags.playerAttack)
             {
                 character.Healt -= other.GetComponent<LaserBeam>().AttackDamage;
+                Destroy(other.gameObject);
             }
 
             player.GetComponent<Player>().PlayerScoresUpdate();
