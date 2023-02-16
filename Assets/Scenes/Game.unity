@@ -1372,13 +1372,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253011703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -540, y: -960, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 519100077}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265940700
 GameObject:
@@ -1952,6 +1952,40 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3165295810023929870, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
   m_PrefabInstance: {fileID: 3165295809679782339}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &519100076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 519100077}
+  m_Layer: 0
+  m_Name: Sesler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &519100077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519100076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 960, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1174150049}
+  - {fileID: 827182442}
+  - {fileID: 253011705}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,13 +3257,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827182440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -540, y: -960, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 519100077}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870267832
 GameObject:
@@ -5057,13 +5091,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174150047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 460.17725, y: 970.87524, z: 12.230195}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -79.822754, y: 10.875244, z: 12.230195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 519100077}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175913259
 GameObject:
@@ -8383,6 +8417,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3929215543694373230, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 382e174f7bc569f4ca99c42b20d66eee, type: 3}
+    - target: {fileID: 3929215543694373230, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
+      propertyPath: AudioSFX
+      value: 
+      objectReference: {fileID: 253011703}
+    - target: {fileID: 3929215543694373230, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
+      propertyPath: laserBeam
+      value: 
+      objectReference: {fileID: 3240436292332635853, guid: e60a69ee946773c4cb80ffea905dbb82, type: 3}
     - target: {fileID: 4728990398356614362, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: healt
       value: 3
@@ -8415,6 +8461,18 @@ PrefabInstance:
       propertyPath: AudioSFX
       value: 
       objectReference: {fileID: 827182440}
+    - target: {fileID: 8605902435276300818, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 382e174f7bc569f4ca99c42b20d66eee, type: 3}
+    - target: {fileID: 8605902435276300818, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
+      propertyPath: AudioSFX
+      value: 
+      objectReference: {fileID: 253011703}
+    - target: {fileID: 8605902435276300818, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
+      propertyPath: laserBeam
+      value: 
+      objectReference: {fileID: 3240436292332635853, guid: e60a69ee946773c4cb80ffea905dbb82, type: 3}
     - target: {fileID: 8988698192479459151, guid: f5427e2a0c65e7749ae27d15c4e36ee2, type: 3}
       propertyPath: Audio
       value: 

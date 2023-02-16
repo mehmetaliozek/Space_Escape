@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3165295810023929870}
-  missile: {fileID: 3240436292332635853, guid: e60a69ee946773c4cb80ffea905dbb82, type: 3}
+  laserBeam: {fileID: 0}
+  AudioSFX: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!1 &3165295810023929870
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,6 +84,8 @@ Transform:
   m_Children:
   - {fileID: 7783839023426285735}
   - {fileID: 5901075592441355054}
+  - {fileID: 181728839192918486}
+  - {fileID: 4126800638935689740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  AudioSFX: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!114 &4728990398356614362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +241,103 @@ MonoBehaviour:
   moveSpeed: 0
   score: 0
   highScore: 0
+  gold: 0
+--- !u!1 &3922573291008016703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4126800638935689740}
+  - component: {fileID: 3929215543694373230}
+  m_Layer: 0
+  m_Name: Weapon Right 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4126800638935689740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922573291008016703}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.46, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3165295810023929875}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3929215543694373230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922573291008016703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4268d36b1eb000b42a39ebfbaf8bb030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 3165295810023929870}
+  laserBeam: {fileID: 0}
+  AudioSFX: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!1 &5270589945809549637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181728839192918486}
+  - component: {fileID: 8605902435276300818}
+  m_Layer: 0
+  m_Name: Weapon Left 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &181728839192918486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270589945809549637}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.46, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3165295810023929875}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8605902435276300818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270589945809549637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4268d36b1eb000b42a39ebfbaf8bb030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 3165295810023929870}
+  laserBeam: {fileID: 0}
+  AudioSFX: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!1 &7929837525779555263
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,4 +383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3165295810023929870}
-  missile: {fileID: 3240436292332635853, guid: e60a69ee946773c4cb80ffea905dbb82, type: 3}
+  laserBeam: {fileID: 0}
+  AudioSFX: {fileID: 0}
+  Audio: {fileID: 0}
