@@ -17,8 +17,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gold;
     [SerializeField] private GameObject healt;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject spaceShips;
-    [SerializeField] private GameObject galaxies;
+    [SerializeField] private GameObject[] spaceShips;
+    [SerializeField] private GameObject[] galaxies;
 
     [SerializeField] private GameObject Ses;
     [SerializeField] private GameObject SesFx;
@@ -124,31 +124,33 @@ public class UIManager : MonoBehaviour
         mainMenu.SetActive(!value);
     }
 
-    public void AudioChange(GameObject Slider)
+    public void AudioChangeMusic(GameObject slider)
     {
-        Ses.GetComponent<AudioSource>().volume = Slider.GetComponent<Slider>().value;
+        Ses.GetComponent<AudioSource>().volume = slider.GetComponent<Slider>().value;
     }
     
-    public void AudioChangeSFX(GameObject Slider2)
+    public void AudioChangeSFX(GameObject lider)
     {
-        SesFx.GetComponent<AudioSource>().volume = Slider2.GetComponent<Slider>().value;
+        SesFx.GetComponent<AudioSource>().volume = lider.GetComponent<Slider>().value;
         //Mermi Sesi Çarpışma sesinin üstüne binmemesi için daha az değer alıyor
-        SesFx2.GetComponent<AudioSource>().volume=Slider2.GetComponent<Slider>().value/4;
-        
-        
-        
+        SesFx2.GetComponent<AudioSource>().volume=lider.GetComponent<Slider>().value/4;
     }
+
     public void TabChange(bool isSpaceShip)
     {
         if (isSpaceShip)
         {
-            spaceShips.SetActive(false);
-            galaxies.SetActive(true);
+            spaceShips[0].SetActive(false);
+            spaceShips[1].SetActive(true);
+            galaxies[0].SetActive(true);
+            galaxies[1].SetActive(false);
         }
         else
         {
-            spaceShips.SetActive(true);
-            galaxies.SetActive(false);
+            spaceShips[0].SetActive(true);
+            spaceShips[1].SetActive(false);
+            galaxies[0].SetActive(false);
+            galaxies[1].SetActive(true);
         }
     }
 }
