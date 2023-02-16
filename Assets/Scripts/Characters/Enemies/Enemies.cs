@@ -10,10 +10,13 @@ public class Enemies : MonoBehaviour
 
     private Character character;
 
+    private UIManager uıManager;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag(Tags.player);
         character = GetComponent<Character>();
+        uıManager = GameObject.FindObjectOfType<UIManager>();
     }
 
     private void Update()
@@ -30,6 +33,9 @@ public class Enemies : MonoBehaviour
         {
             if (other.tag == Tags.playerAttack)
             {
+                
+                player.GetComponent<Character>().Gold+=1;
+                uıManager.GoldUpdate(player.GetComponent<Character>().Gold.ToString());
                 character.Healt -= other.GetComponent<LaserBeam>().AttackDamage;
                 Destroy(other.gameObject);
             }
