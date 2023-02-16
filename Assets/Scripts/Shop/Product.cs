@@ -9,10 +9,10 @@ public class Product : MonoBehaviour
     [SerializeField] private GameObject[] products;
     [SerializeField] private Sprite product;
     [SerializeField] private Text productLabel;
+    private UIManager uıManager;
     [SerializeField] private string productName;
     [SerializeField] private int price;
     [SerializeField] private bool isPurchased;
-    private int goldCount;
 
     private void Start()
     {
@@ -20,17 +20,17 @@ public class Product : MonoBehaviour
         {
             productLabel.text = productName + " - " + price.ToString() + "$";
         }
+        uıManager = GameObject.FindObjectOfType<UIManager>();
     }
 
     public void PurchaseSpaceShip()
     {
         if (!isPurchased)
         {
-            goldCount = player.GetComponent<Character>().Gold;
-
-            if (goldCount >= price)
+            if (player.GetComponent<Character>().Gold >= price)
             {
-                goldCount -= price;
+                player.GetComponent<Character>().Gold -= price;
+                uıManager.GoldUpdate(player.GetComponent<Character>().Gold.ToString());
                 isPurchased = true;
             }
         }
@@ -61,11 +61,10 @@ public class Product : MonoBehaviour
     {
         if (!isPurchased)
         {
-            goldCount = player.GetComponent<Character>().Gold;
-
-            if (goldCount >= price)
+            if (player.GetComponent<Character>().Gold >= price)
             {
-                goldCount -= price;
+                player.GetComponent<Character>().Gold -= price;
+                uıManager.GoldUpdate(player.GetComponent<Character>().Gold.ToString());
                 isPurchased = true;
             }
         }

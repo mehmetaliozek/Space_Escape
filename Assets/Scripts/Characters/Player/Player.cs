@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public GameObject AudioSFX;
     public AudioClip Audio;
 
+    public GameObject weaponLeft;
+    public GameObject weaponRight;
+
     private void Awake()
     {
         if (!cam) cam = Camera.main;
@@ -39,7 +42,6 @@ public class Player : MonoBehaviour
         {
 
             case Tags.enemies:
-                
                 AudioSFX.GetComponent<AudioSource>().PlayOneShot(Audio);
                 character.Healt -= other.GetComponent<Character>().AttackDamage;
                 uıManager.HealtUpdate(character.Healt.ToString());
@@ -49,13 +51,18 @@ public class Player : MonoBehaviour
                 }
                 break;
             case Tags.attackBoost:
-                character.AttackDamage = 6;
+                weaponLeft.SetActive(true);
+                weaponRight.SetActive(true);
+                character.AttackDamage = 10;
+                uıManager.CreateBoost(Tags.attackBoost);
                 break;
             case Tags.attackSpeedBoost:
                 character.AttackSpeed = 0.5f;
+                uıManager.CreateBoost(Tags.attackSpeedBoost);
                 break;
             case Tags.moveSpeedBoost:
                 character.MoveSpeed = 1;
+                uıManager.CreateBoost(Tags.moveSpeedBoost);
                 break;
             case Tags.gold:
                 character.Gold += 1;

@@ -20,10 +20,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject[] spaceShips;
     [SerializeField] private GameObject[] galaxies;
 
-    [SerializeField] private GameObject Ses;
-    [SerializeField] private GameObject SesFx;
+    [SerializeField] private GameObject ses;
+    [SerializeField] private GameObject sesFx;
 
-    [SerializeField] private GameObject SesFx2;
+    [SerializeField] private GameObject sesFx2;
+    [SerializeField] private GameObject attackBoostBox;
+    [SerializeField] private GameObject attackSpeedBoostBox;
+    [SerializeField] private GameObject moveSpeedBoostBox;
 
     private GameObject pauseAndResumeButton;
     private Animator playerAnimator;
@@ -126,14 +129,14 @@ public class UIManager : MonoBehaviour
 
     public void AudioChangeMusic(GameObject slider)
     {
-        Ses.GetComponent<AudioSource>().volume = slider.GetComponent<Slider>().value;
+        ses.GetComponent<AudioSource>().volume = slider.GetComponent<Slider>().value;
     }
-    
-    public void AudioChangeSFX(GameObject lider)
+
+    public void AudioChangeSFX(GameObject slider)
     {
-        SesFx.GetComponent<AudioSource>().volume = lider.GetComponent<Slider>().value;
+        sesFx.GetComponent<AudioSource>().volume = slider.GetComponent<Slider>().value;
         //Mermi Sesi Çarpışma sesinin üstüne binmemesi için daha az değer alıyor
-        SesFx2.GetComponent<AudioSource>().volume=lider.GetComponent<Slider>().value/4;
+        sesFx2.GetComponent<AudioSource>().volume = slider.GetComponent<Slider>().value / 4;
     }
 
     public void TabChange(bool isSpaceShip)
@@ -151,6 +154,25 @@ public class UIManager : MonoBehaviour
             spaceShips[1].SetActive(false);
             galaxies[0].SetActive(false);
             galaxies[1].SetActive(true);
+        }
+    }
+
+    public void CreateBoost(string boostTag)
+    {
+        switch (boostTag)
+        {
+            case Tags.attackBoost:
+                attackBoostBox.GetComponent<BoostBox>().TimeReset();
+                attackBoostBox.SetActive(true);
+                break;
+            case Tags.attackSpeedBoost:
+                attackSpeedBoostBox.GetComponent<BoostBox>().TimeReset();
+                attackSpeedBoostBox.SetActive(true);
+                break;
+            case Tags.moveSpeedBoost:
+                moveSpeedBoostBox.GetComponent<BoostBox>().TimeReset();
+                moveSpeedBoostBox.SetActive(true);
+                break;
         }
     }
 }
