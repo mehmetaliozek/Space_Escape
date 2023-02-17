@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Product : MonoBehaviour
+public class Product : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject parallax;
@@ -13,6 +13,8 @@ public class Product : MonoBehaviour
     [SerializeField] private string productName;
     [SerializeField] private int price;
     [SerializeField] private bool isPurchased;
+    [SerializeField] private int index;
+    [SerializeField] private string type;
 
     private void Start()
     {
@@ -105,4 +107,49 @@ public class Product : MonoBehaviour
         }
     }
 
+    public void LoadData(GameData data)
+    {
+        switch (type.ToUpper())
+        {
+            case "S":
+                this.isPurchased = data.spaceShips[index];
+                this.blur.SetActive(data.spaceShipsBlur[index]);
+                if (this.isPurchased && player.GetComponent<SpriteRenderer>().sprite == product)
+                {
+                    ChangeProductLabel(true);
+                }
+                else
+                {
+                    productLabel.text = productName + " - " + price.ToString() + "$";
+                }
+                break;
+            case "G":
+                this.isPurchased = data.galaxies[index];
+                this.blur.SetActive(data.galaxiesBlur[index]);
+                if (this.isPurchased && parallax.GetComponentsInChildren<SpriteRenderer>()[1].sprite == product)
+                {
+                    ChangeProductLabel(true);
+                }
+                else
+                {
+                    productLabel.text = productName + " - " + price.ToString() + "$";
+                }
+                break;
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        switch (type.ToUpper())
+        {
+            case "S":
+                data.spaceShips[index] = this.isPurchased;
+                data.spaceShipsBlur[index] = this.blur.activeSelf;
+                break;
+            case "G":
+                data.galaxies[index] = this.isPurchased;
+                data.galaxiesBlur[index] = this.blur.activeSelf;
+                break;
+        }
+    }
 }

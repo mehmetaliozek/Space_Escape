@@ -112,8 +112,13 @@ public class UIManager : MonoBehaviour
         score.text = text;
         if (int.Parse(text) >= int.Parse(highScore.text))
         {
-            highScore.text = text;
+           LoadHighScore(text);
         }
+    }
+
+    public void LoadHighScore(string text)
+    {
+        highScore.text = text;
     }
 
     public void OpenAndCloseSettings(bool value)

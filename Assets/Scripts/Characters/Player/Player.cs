@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDataPersistence
 {
     [SerializeField]
     private Camera cam;
@@ -119,5 +119,24 @@ public class Player : MonoBehaviour
         characterClone.Gold = character.Gold;
 
         uıManager.HealtUpdate(character.Healt.ToString());
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.player != null)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = data.player;
+        }
+        this.character.HighScore = data.highScore;
+        this.character.Gold = data.gold;
+        uıManager.GoldUpdate(this.character.Gold.ToString());
+        uıManager.LoadHighScore(this.character.HighScore.ToString());
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.player = this.gameObject.GetComponent<SpriteRenderer>().sprite;
+        data.highScore = this.character.HighScore;
+        data.gold = this.character.Gold;
     }
 }
