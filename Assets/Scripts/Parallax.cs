@@ -13,6 +13,6 @@ public class Parallax : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
-        data.parallax = this.gameObject.GetComponentsInChildren<SpriteRenderer>()[1].sprite;
+        data.parallax = this.GetComponentsInChildren<SpriteRenderer>()[1].sprite;
     }
 }

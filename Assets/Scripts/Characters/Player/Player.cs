@@ -135,8 +135,8 @@ public class Player : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
-        data.player = this.gameObject.GetComponent<SpriteRenderer>().sprite;
-        data.highScore = this.character.HighScore;
-        data.gold = this.character.Gold;
+        data.highScore = this.characterClone.HighScore;
+        data.gold = this.characterClone.Gold;
+        data.player = this.GetComponent<SpriteRenderer>().sprite;
     }
 }
