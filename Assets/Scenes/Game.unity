@@ -5801,6 +5801,7 @@ MonoBehaviour:
   - {fileID: 1877532713, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
   - {fileID: 974863365, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
   - {fileID: -309278599, guid: f3e8069b3de36f84d8dfa4c77306c00c, type: 3}
+  Player: {fileID: 455502463}
 --- !u!61 &1315087877
 BoxCollider2D:
   m_ObjectHideFlags: 0

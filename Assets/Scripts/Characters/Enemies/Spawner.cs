@@ -15,6 +15,10 @@ public class Spawner : MonoBehaviour
     private Sprite[] boostSprites;
 
     private float countDown;
+    private int oldscore;
+    private float oldcountDown=2f;
+    private int sabit;
+    public GameObject Player;
 
     private float range;
 
@@ -31,6 +35,20 @@ public class Spawner : MonoBehaviour
         if (GameObject.FindObjectOfType<UIManager>().isPlayable)
         {
             countDown -= Time.deltaTime;
+            oldscore=Player.GetComponent<Character>().Score-sabit;
+            if(oldscore>=30){
+                //bir yerden sonra düşmanlar çok hızlı doğuyor en hızlı 0.8f ile doğsuns
+                if(oldcountDown>0.8f){
+                   sabit+=30;
+                   oldcountDown-=0.3f;
+                }
+                else{
+                    oldcountDown=0.8f;
+                }
+                
+                
+            }
+            
             if (countDown < 0)
             {
                 if (Random.Range(0, 100) < 90)
@@ -41,7 +59,7 @@ public class Spawner : MonoBehaviour
                 {
                     SpawnBoost(Random.Range(0, boostSprites.Length));
                 }
-                countDown = 2.0f;
+                countDown = oldcountDown;
             }
         }
     }
