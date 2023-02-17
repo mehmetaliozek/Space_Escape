@@ -584,6 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.game
+  useEncryption: 0
 --- !u!1 &168213073
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.game
+  useEncryption: 0
 --- !u!1 &204329761
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,6 +5955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.game
+  useEncryption: 0
 --- !u!1 &1393794134
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,6 +6568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.game
+  useEncryption: 1
 --- !u!1 &1526622368
 GameObject:
   m_ObjectHideFlags: 0
