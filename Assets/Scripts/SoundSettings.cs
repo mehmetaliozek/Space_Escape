@@ -19,6 +19,7 @@ public class SoundSettings : MonoBehaviour, IDataPersistence
         this.sliderSFX.GetComponent<Slider>().value = data.sfx;
         uıManager.AudioChangeMusic(this.sliderMusic);
         uıManager.AudioChangeSFX(this.sliderSFX);
+        gameObject.SetActive(false);
     }
 
     public void SaveData(ref GameData data)
